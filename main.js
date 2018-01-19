@@ -11,16 +11,20 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-var ffi = require( 'ffi' );
-var ref = require( 'ref' );
-var libhello  = ffi.Library( './cpp/build/Release/hello', {
-    'hello': [ 'string', [] ]
-});
-global.obj = { myvar: libhello.hello( ) }
+// Disable the link to Dynamic Library
+// var ffi = require( 'ffi' );
+// var ref = require( 'ref' );
+// var libhello  = ffi.Library( './cpp/build/Release/hello', {
+//     'hello': [ 'string', [] ]
+// });
+// global.obj = { myvar: libhello.hello( ) }
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 800, height: 600 })
+  mainWindow = new BrowserWindow({ width: 1281,
+                                   height: 800,
+                                   minWidth: 1281,
+                                   minHeight: 800 })
 
   // and load the index.html of the app.
   mainWindow.loadURL( url.format({
