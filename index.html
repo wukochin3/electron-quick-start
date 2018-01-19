@@ -13,7 +13,7 @@
         <nav>
           <ul>
             <li><a href="#intro">Welcome</a></li>
-            <li><a href="#one">Who we are</a></li>
+            <li><a href="#one">Video</a></li>
             <li><a href="#two">What we do</a></li>
             <li><a href="#three">Get in touch</a></li>
           </ul>
@@ -41,12 +41,17 @@
             <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="top center" /></a>
             <div class="content">
               <div class="inner">
-                <h2>Feugiat consequat</h2>
+                <h2>Play HLS</h2>
                 <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
                 <ul class="actions">
                   <li><a href="#" class="button">Learn more</a></li>
                 </ul>
               </div>
+              <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="480" height="240" data-setup='{}' >
+                <source
+                  src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+                  type="application/x-mpegURL">
+              </video>
             </div>
           </section>
           <section>
@@ -186,6 +191,11 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- VideoJS -->
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+
     <script>window.$ = window.jQuery = require('./assets/js/jquery.min.js');</script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
